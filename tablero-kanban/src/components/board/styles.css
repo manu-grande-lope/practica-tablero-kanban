@@ -1,0 +1,5 @@
+.board__style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

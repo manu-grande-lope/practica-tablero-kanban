@@ -1,0 +1,15 @@
+
+.header__style{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #24292e;
+    color: #ffffff;
+    width:100%;
+    height: 50px;
+}
+
+.header__style--p{
+    margin: auto;
+}
