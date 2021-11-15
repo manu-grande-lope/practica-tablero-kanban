@@ -1,0 +1,50 @@
+.form_container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 10px;
+}
+.btn_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.btn {
+    width: 9rem;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(27,31,35,0.15);
+}
+textarea {
+    border-radius: 0.4rem;
+    width: 100%;
+    border: 1px solid rgba(27,31,35,0.15); 
+}
+.btn_color {
+    background-color: #2EA44F;
+}
+.text_tarea::-webkit-input-placeholder {
+    text-align: center;
+    padding-top: 13px;
+}
+.text_tarea:focus{
+border: rgb(2, 33, 168) 1px solid;
+box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
+-webkit-box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
+-moz-box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
+}
+.btn_opacity {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
