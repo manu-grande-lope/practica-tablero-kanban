@@ -1,10 +1,9 @@
 .main__container{
     min-height: 42rem;
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #fff;
     gap: 0.5rem;
     padding: 0.8rem;

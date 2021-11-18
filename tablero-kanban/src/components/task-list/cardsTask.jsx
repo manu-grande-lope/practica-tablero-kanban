@@ -1,10 +1,10 @@
-function Prueba(props){
+function CardsTask(props){
     return(
-        <div>
+        <div className="card__style">
             <p>{props.results.id}</p>
             <p>{props.results.tarea}</p>
             <p>{props.results.fecha}</p>
         </div>
     )
 }
-export default Prueba;
+export default CardsTask;
