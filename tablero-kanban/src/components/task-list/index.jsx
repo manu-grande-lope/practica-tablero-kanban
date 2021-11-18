@@ -18,7 +18,7 @@ function TaskList(props) {
 
 
 // funcion que le paso al formulario como props, para que cuando ingreso una nueva tarea, el form llame a está función, y se modifique la varible de estado para volver a pintar, pero ahora con la nueva tarea guardada.
-// Esto de Martín lo he copiado tal cual porque no sé bien lo que debería estar haciendo ni donde se llama la función.
+
     const drawTaskList = () => {
         draw ? setDraw(false) : setDraw(true);
         addTask ? setAddTask(false) : setAddTask(true)
