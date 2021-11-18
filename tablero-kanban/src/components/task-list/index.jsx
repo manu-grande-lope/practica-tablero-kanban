@@ -1,29 +1,30 @@
 import React, { Fragment, useEffect, useState } from "react";
 import './style.css'
 import Form from '../form'
-import Prueba from "./prueba";
+import CardsTask from "./cardsTask";
 
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false);
     const [task, setTask] = useState([]);
     const [draw, setDraw] = useState(true);
 
-//inicializo el contador al valor de la local Storage, si no hay valor todavía, lo inicializo en 1
+//Contador en local storage, se inicializa en 1
     let counter = localStorage.getItem('counter') ?? 1;  
 
-// función que cambia una variable de estado, para que al hacer click en el'+' para abrir el formulario, se actualice, haga render otra vez, y abra el formulario
+// Abre el form
     function openForm() {
         addTask === true ? setAddTask(false):setAddTask(true)
         }
 
 
-// funcion que le paso al formulario como props, para que cuando ingreso una nueva tarea, el form llame a está función, y se modifique la varible de estado para volver a pintar, pero ahora con la nueva tarea guardada
+// funcion que le paso al formulario como props, para que cuando ingreso una nueva tarea, el form llame a está función, y se modifique la varible de estado para volver a pintar, pero ahora con la nueva tarea guardada.
+// Esto de Martín lo he copiado tal cual porque no sé bien lo que debería estar haciendo ni donde se llama la función.
     const drawTaskList = () => {
         draw ? setDraw(false) : setDraw(true);
         addTask ? setAddTask(false) : setAddTask(true)
     }
 
-// está función sería como el componentDidMount que usabamos en la clase, para que al abrir el programa, recoja las tareas de la localStorage y pinte las cards
+// Debería pintar las cards del form de Pedro pero no tira
     useEffect (() => {
         let arr = [];
         for (let i =1; i<counter;i++){
@@ -39,14 +40,14 @@ function TaskList(props) {
             <div className="taskList__container">
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
-                        <div className="counter">12</div>
+                        <div className="counter">00</div>
                         <h3 className="task__title">{props.title}</h3>
                     </div>
                     <button className="button__add" onClick={openForm}>+</button>
                     {props.remove}
                 </div>
                 {addTask ? <Form> </Form> : ' '}
-                {task.map((e) => props.title === e.estado ?<Prueba key={e.id} results={e}></Prueba>:'')}
+                {task.map((e) => props.title === e.estado ?<CardsTask key={e.id} results={e}></CardsTask>:'')}
             </div>
         </Fragment>
     )

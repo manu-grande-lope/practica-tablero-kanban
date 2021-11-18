@@ -25,13 +25,13 @@ textarea {
 }
 .boton-submit {
     background-color: #2EA44F;
+    color: #ffffff;
 }
 .text_tarea::-webkit-input-placeholder {
     text-align: center;
     padding-top: 13px;
 }
 .text_tarea:focus{
-border: rgb(2, 33, 168) 1px solid;
 box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
 -webkit-box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
 -moz-box-shadow: 0px 0px 1px 3px rgba(40,153,233,0.75);
