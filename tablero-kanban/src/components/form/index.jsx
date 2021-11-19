@@ -3,23 +3,24 @@ import { Fragment, useState } from 'react'
 import React from 'react';
 import { useEffect } from 'react';
 
-function Form() {
+function Form(props) {
     const [task, setTask] = useState([]);
     const [btnEnabled, setBtnEnabled] = useState(false);
+    const [title, setTitle] = useState('');
 
     let counter = localStorage.getItem('counter') ?? 1;
     let [cont, updatecont] = useState(counter);
     console.log(counter)
-    useEffect(() => {
-        let arr = [];
-        for (let i = 1; i < counter; i++) {
-            if (JSON.parse(localStorage.getItem(`task${cont}`) !== null)) {
-                arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
-            } console.log(arr)
-        }
+    // useEffect(() => {
+    //     let arr = [];
+    //     for (let i = 1; i < counter; i++) {
+    //         if (JSON.parse(localStorage.getItem(`task${cont}`) !== null)) {
+    //             arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
+    //         } console.log(arr)
+    //     }
 
-        setTask(arr)
-    }, [cont])
+    //     setTask(arr)
+    // }, [cont])
 
 
 
@@ -40,13 +41,18 @@ function Form() {
         const tarea = {
             id: cont,
             tarea: e.target.text.value,
-            fecha: fecha
+            estado: props.titleTask,
+            fecha: fecha,
+            estadoIcono : props.titleTask === 'Done' ? 'Done': 'Pending'
+            
 
         }
+        setTitle(e.target.text.value);
 
         localStorage.setItem(`task${cont}`, JSON.stringify(tarea));
         counter++;
         localStorage.setItem('counter', counter)
+        props.onUpdateTaskList();
     }
 
 
@@ -54,7 +60,7 @@ function Form() {
         <Fragment>
             <form action="" onSubmit={enviar}>
                 <textarea name="text" placeholder="Enter a note" onInput={textoVacio}></textarea>
-                <div>{task}</div>
+          
                 <div className="boton-container">
                     {btnEnabled ? <button type='submit' className='boton boton-submit'>Add</button>
                         : <button type='submit' className='boton boton-submit btn_opacity'>Add</button>}

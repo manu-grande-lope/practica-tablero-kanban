@@ -46,7 +46,7 @@ function TaskList(props) {
                     <button className="button__add" onClick={openForm}>+</button>
                     {props.remove}
                 </div>
-                {addTask ? <Form> </Form> : ' '}
+                {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}> </Form> : ' '}
                 {task.map((e) => props.title === e.estado ?<CardsTask key={e.id} results={e}></CardsTask>:'')}
             </div>
         </Fragment>
