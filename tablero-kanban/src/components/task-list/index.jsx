@@ -35,6 +35,26 @@ function TaskList(props) {
        setTask(arr)
     }, [counter])
 
+    function handleClickDeleteAll() {
+
+        for (let i = 1; i < counter; i++) {
+            const objeto = JSON.parse(localStorage.getItem(`task${i}`));
+            if (objeto !== null) {
+                if (objeto.estado === 'Done') {
+                    localStorage.removeItem(`task${i}`)
+                }
+            }
+        }
+        draw ? setDraw(false) : setDraw(true);
+    }
+
+    function dobleClick()
+{
+    handleClickDeleteAll();
+    window.location.reload();
+}
+
+
     return (
         <Fragment>
             <div className="taskList__container">
@@ -44,10 +64,14 @@ function TaskList(props) {
                         <h3 className="task__title">{props.title}</h3>
                     </div>
                     <button className="button__add" onClick={openForm}>+</button>
-                    {props.remove}
+                    <div>
+                    <button
+                            onClick={dobleClick}
+                            className="btn_clearAll">{props.remove}</button>
+                    </div>
                 </div>
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}> </Form> : ' '}
-                {task.map((e) => props.title === e.estado ?<CardsTask key={e.id} results={e}></CardsTask>:'')}
+                {task.map((e) => props.title === e.estado ?<CardsTask key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></CardsTask>:'')}
             </div>
         </Fragment>
     )
