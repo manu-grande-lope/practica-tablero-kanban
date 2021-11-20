@@ -24,7 +24,7 @@ function TaskList(props) {
         addTask ? setAddTask(false) : setAddTask(true)
     }
 
-// Debería pintar las cards del form de Pedro pero no tira
+// Counter que suma +1 en las task lists, hay que ver como hacer que recoja lo que hay en cada una
     useEffect (() => {
         let arr = [];
         for (let i =1; i<counter;i++){
@@ -40,7 +40,7 @@ function TaskList(props) {
             <div className="taskList__container">
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
-                        <div className="counter">00</div>
+                        <div className="counter">{[counter]}</div> {/* Suma en todas las columnas de TaskList, hay que ver como hacer que solo sume en una*/}
                         <h3 className="task__title">{props.title}</h3>
                     </div>
                     <button className="button__add" onClick={openForm}>+</button>
