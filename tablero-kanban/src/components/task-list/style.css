@@ -1,12 +1,14 @@
 /* CAJA */
 .taskList__container{
     width: 30%;
+    max-height: 800px;
     background-color: #f6f8fa;
     border: rgba(27,31,35,0.2) solid 1px;
     border-radius: 0.5rem;
     padding: 0.8rem;
     font-size: 0.8rem;
     color: rgba(27, 31, 35, 0.479);
+    overflow:scroll;
 }
 /* HEADER (counter-title-button */
 .taskList__header{

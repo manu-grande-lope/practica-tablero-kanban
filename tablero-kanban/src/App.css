@@ -7,4 +7,5 @@
     background-color: #fff;
     gap: 0.5rem;
     padding: 0.8rem;
+    overflow: hidden;
   }

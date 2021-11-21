@@ -33,7 +33,8 @@ function Form(props) {
 
     }
     const enviar = (e) => {
-        e.preventDefault();
+        if (btnEnabled===true){
+              e.preventDefault();
 
         const day = new Date();
         const fecha = `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()} ${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`;
@@ -52,7 +53,9 @@ function Form(props) {
         localStorage.setItem(`task${cont}`, JSON.stringify(tarea));
         counter++;
         localStorage.setItem('counter', counter)
-        props.onUpdateTaskList();
+        props.onUpdateTaskList(); 
+        }
+     
     }
 
 
@@ -60,7 +63,6 @@ function Form(props) {
         <Fragment>
             <form action="" onSubmit={enviar}>
                 <textarea name="text" placeholder="Enter a note" onInput={textoVacio}></textarea>
-          
                 <div className="boton-container">
                     {btnEnabled ? <button type='submit' className='boton boton-submit'>Add</button>
                         : <button type='submit' className='boton boton-submit btn_opacity'>Add</button>}
