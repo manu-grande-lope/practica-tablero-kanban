@@ -27,14 +27,14 @@ function App() {
       <Header></Header>
 
       <div>
-        <input type="text" onChange={handleFiltro}></input>
+        <input className="searchBar__style" type="text" placeholder="Search a task" onChange={handleFiltro}></input>
 
       </div>
 
       <div className="main__container">
         <TaskList title="To do" texto={handleFiltro()}></TaskList>
         <TaskList title="In progress" texto={handleFiltro()}></TaskList>
-        <TaskList title="Done" texto={handleFiltro()} remove="Clear All"></TaskList>
+        <TaskList title="Done" texto={handleFiltro()} remove="CLEAR ALL 🗑️"></TaskList>
       </div>
     </Fragment>
 

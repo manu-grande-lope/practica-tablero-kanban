@@ -1,11 +1,18 @@
-.main__container{
-    min-height: 42rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #fff;
-    gap: 0.5rem;
-    padding: 0.8rem;
-    overflow: hidden;
-  }
+.main__container {
+  min-height: 42rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #fff;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  overflow: hidden;
+}
+
+.searchBar__style {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+}

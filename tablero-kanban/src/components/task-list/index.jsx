@@ -126,7 +126,7 @@ function TaskList(props) {
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
                         
-                        <div className="counter">{numeroTareas()}</div> {/* Suma en todas las columnas de TaskList, hay que ver como hacer que solo sume en una*/}
+                        <div className="counter">{numeroTareas()}</div>
                         <h3 className="task__title">{props.title}</h3>
                     </div>
                     <button className="button__add" onClick={openForm}>+</button>

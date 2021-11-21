@@ -27,7 +27,7 @@ function CardsTask(props) {
                     <p className="card__style--p" onClick={handleStatus}>{props.results.tarea}</p>
                 </div>
                 <p className="card__style--fecha">{props.results.fecha}</p>
-                <button type="submit" onClick={handleClick}>borrar</button>
+                <button className="card__style--button" type="submit" onClick={handleClick}>🗑️</button>
             </div>
         </form>
     )

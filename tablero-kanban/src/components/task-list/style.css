@@ -22,7 +22,8 @@
     display: inline-flex;
     flex-direction: row;
     gap:0.4rem;
-    align-items: baseline;
+    align-items: center;
+    justify-content: center;
 }
 .task__title{
     font-size: 1rem;
@@ -31,14 +32,13 @@
     color: rgba(27, 31, 35, 0.884);
 }
 .counter{
-    width: min-content;
-    color: rgba(27,31,35,0.9);
-    background-color: #e6e6e9;
-    padding: 0.2rem;
-    border-radius: 100%;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: rgba(27,31,35,0.2) solid 1px;
+        width: 20px;
+        line-height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 0.8rem;
+        background-color: #c9c3c3;
+        color: black;
 }
 .button__add{
     border: none;
@@ -83,4 +83,21 @@
     font-style: italic;
     font-weight: 500;
     font-size: 0.6rem;
+}
+
+.card__style--button{
+    align-self: flex-end;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    border-style: none;
+    background-color: white;
+    cursor: pointer
+}
+.card__style--button:hover{
+    cursor: pointer
+}
+
+.clearAll{
+    cursor: pointer;
+
 }
