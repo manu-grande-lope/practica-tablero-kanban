@@ -25,19 +25,15 @@ function App() {
   return (
     <Fragment>
       <Header></Header>
-
-      <div>
-        <input className="searchBar__style" type="text" placeholder="Search a task" onChange={handleFiltro}></input>
-
+      <div className="searchBar__style">
+        <input type="text" placeholder="Search a task" onChange={handleFiltro}></input>
       </div>
-
       <div className="main__container">
         <TaskList title="To do" texto={handleFiltro()}></TaskList>
         <TaskList title="In progress" texto={handleFiltro()}></TaskList>
         <TaskList title="Done" texto={handleFiltro()} remove="CLEAR ALL 🗑️"></TaskList>
       </div>
     </Fragment>
-
   );
 }
 
