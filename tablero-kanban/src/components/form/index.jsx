@@ -1,7 +1,6 @@
 import './style.css'
 import { Fragment, useState } from 'react'
 import React from 'react';
-import { useEffect } from 'react';
 
 function Form(props) {
     const [task, setTask] = useState([]);
@@ -33,29 +32,29 @@ function Form(props) {
 
     }
     const enviar = (e) => {
-        if (btnEnabled===true){
-              e.preventDefault();
+        if (btnEnabled === true) {
+            e.preventDefault();
 
-        const day = new Date();
-        const fecha = `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()} ${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`;
-        updatecont(cont + 1)
-        const tarea = {
-            id: cont,
-            tarea: e.target.text.value,
-            estado: props.titleTask,
-            fecha: fecha,
-            estadoIcono : props.titleTask === 'Done' ? 'Done': 'Pending'
-            
+            const day = new Date();
+            const fecha = `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()} ${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`;
+            updatecont(cont + 1)
+            const tarea = {
+                id: cont,
+                tarea: e.target.text.value,
+                estado: props.titleTask,
+                fecha: fecha,
+                estadoIcono: props.titleTask === 'Done' ? 'Done' : 'Pending'
 
+
+            }
+            setTitle(e.target.text.value);
+
+            localStorage.setItem(`task${cont}`, JSON.stringify(tarea));
+            counter++;
+            localStorage.setItem('counter', counter)
+            props.onUpdateTaskList();
         }
-        setTitle(e.target.text.value);
 
-        localStorage.setItem(`task${cont}`, JSON.stringify(tarea));
-        counter++;
-        localStorage.setItem('counter', counter)
-        props.onUpdateTaskList(); 
-        }
-     
     }
 
 
